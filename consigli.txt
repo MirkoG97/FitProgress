@@ -1,0 +1,7 @@
+1. Aggiungere file .env (Guarda variabili d'ambiente)
+2. CONTROLLERS DEVONO ESSERE TUTTE CLASSI
+3. Ogni calsse dentro un file, il nome della classe deve essere uguale al nome del file e le classi hanno tutte le maiuscole
+4. Su public metti i file con le viste, su scripts metti gli scripts php, su classes metti le classi php divise tra Models, Services e Core
+5. I file di configurazione dovrebbero tornare array
+6. La connessione deve essere su una classe globale: guardare pattern Singletone
+7. Guarda Composer
