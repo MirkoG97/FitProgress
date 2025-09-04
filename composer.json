@@ -1,0 +1,21 @@
+{
+    "name": "mirko/fit-progress",
+    "description": "No description",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^7.10",
+        "league/csv": "^9.24"
+    },
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "Mirko\\FitProgress\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mirko Giraldo",
+            "email": "mirkogiraldo@gmail.com"
+        }
+    ]
+}
