@@ -1,5 +1,8 @@
 <?php
-    require_once('../models/class.php');
+    require_once('../../config/config.php');
+    require __DIR__ . '/../../vendor/autoload.php';
+
+    use App\Models\User\Utente;
 
     $mail = $connessione->real_escape_string($_POST['mail']);
     $password = $connessione->real_escape_string($_POST['password']);

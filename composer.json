@@ -9,7 +9,7 @@
     "license": "GPL-3.0",
     "autoload": {
         "psr-4": {
-            "Mirko\\FitProgress\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [

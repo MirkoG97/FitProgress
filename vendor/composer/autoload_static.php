@@ -19,10 +19,6 @@ class ComposerStaticInit0491bb11a0a8a05d34237870bdb81d62
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
         ),
-        'M' => 
-        array (
-            'Mirko\\FitProgress\\' => 18,
-        ),
         'L' => 
         array (
             'League\\Csv\\' => 11,
@@ -32,6 +28,10 @@ class ComposerStaticInit0491bb11a0a8a05d34237870bdb81d62
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
@@ -44,10 +44,6 @@ class ComposerStaticInit0491bb11a0a8a05d34237870bdb81d62
         'Psr\\Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
-        ),
-        'Mirko\\FitProgress\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'League\\Csv\\' => 
         array (
@@ -64,6 +60,10 @@ class ComposerStaticInit0491bb11a0a8a05d34237870bdb81d62
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

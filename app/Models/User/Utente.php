@@ -1,5 +1,8 @@
 <?php
-    require_once('../../config/config.php');
+    namespace App\Models\User;
+    use App\Models\User\Admin;
+    use App\Models\User\PersonalTrainer;
+    //require_once('../../config/config.php');
 
     class Utente{
         public $id;
@@ -77,15 +80,15 @@
 
             switch($_SESSION['ruolo']){
                 case 1:
-                    header("location: ../views/adminPrivateArea.php");
+                    header("location: ../../scripts/adminPrivateArea.php");
                     break;
 
                 case 3:
-                    header("location: ../views/personalTrainerPrivateArea.php");
+                    header("location: ../../scripts/personalTrainerPrivateArea.php");
                     break;
 
                 default:
-                    header("location: ../views/userPrivateArea.php");
+                    header("location: ../../scripts/userPrivateArea.php");
                     break;
             }
         }
@@ -122,7 +125,7 @@
                         break;
 
                     case 3:
-                        return new Personal_Trainer(
+                        return new PersonalTrainer(
                             $utente['nome'],
                             $utente['cognome'],
                             $utente['mail'],

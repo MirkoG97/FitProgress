@@ -1,4 +1,6 @@
 <?php
+    namespace App\Models\User;
+    
     class Admin extends Utente{
 
         function __construct($nome, $cognome, $mail, $password, $ruolo, $id = null, $personal_trainer = null){

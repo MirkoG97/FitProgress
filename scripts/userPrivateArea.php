@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['logged']) || $_SESSION['logged'] !== true){
-        header("location: ../../public/login.html");
+        header("location: ../public/login.html");
         exit;
     }
 ?>
@@ -72,7 +72,7 @@
                         <li><a class="dropdown-item" href="#"><img src="../../public/assets/images/icon/headset.svg"><i class="bi bi-list-task me-2"></i> Supporto</a></li>
                         <li><a class="dropdown-item" href="#"><img src="../../public/assets/images/icon/person.svg"><i class="bi bi-person me-2"></i> Profilo</a></li> 
                         <li><hr class="dropdown-divider"></li> 
-                        <li><a class="dropdown-item text-danger" href="../controllers/logout.php"><img src="../../public/assets/images/icon/box-arrow-right.svg"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li> 
+                        <li><a class="dropdown-item text-danger" href="../app/Services/logout.php"><img src="../../public/assets/images/icon/box-arrow-right.svg"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li> 
                     </ul> 
                 </div> 
             </nav>

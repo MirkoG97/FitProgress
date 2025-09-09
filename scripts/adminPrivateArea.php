@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['logged']) || $_SESSION['logged'] !== true){
-        header("location: ../../public/login.html");
+        header("location: ../public/login.html");
         exit;
     }
 ?>
@@ -22,7 +22,7 @@
     <?php
         echo "ciao ".$_SESSION['nome']." con ID ".$_SESSION['id']." e ruolo ".$_SESSION['ruolo'];
     ?>
-    <a href="../controllers/logout.php">Disconnetti</a>
+    <a href="../app/Services/logout.php">Disconnetti</a>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

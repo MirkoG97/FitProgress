@@ -1,7 +1,9 @@
 <?php
     header('Content-Type: application/json');
-    require_once('../models/class.php');
+    require __DIR__ . '/../../vendor/autoload.php';
 
+    use App\Models\User\Utente;
+    
     session_start();
 
     $response = [];

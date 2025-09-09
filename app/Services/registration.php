@@ -1,5 +1,8 @@
 <?php
-    require_once('../models/class.php');
+    require_once('../../config/config.php');
+    require __DIR__ . '/../../vendor/autoload.php';
+
+    use App\Models\User\Utente;
 
     $nome = $connessione->real_escape_string($_POST['nome']);
     $cognome = $connessione->real_escape_string($_POST['cognome']);
