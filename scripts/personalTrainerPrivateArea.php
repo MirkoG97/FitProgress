@@ -24,28 +24,28 @@
         <!-- SIDEBAR -->
         <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary position-fixed h-100" style="width: 4.5rem"> 
             <a href="../../public/index.html" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only"> 
-                <img src="../../public/assets/images/icon/fitprogress_logo.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                <img src="../public/assets/images/icon/fitprogress_logo.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 <span class="visually-hidden">FitProgress</span>
             </a> 
                 <ul class="nav nav-pills nav-flush flex-column mb-auto text-center "> 
                     <li class="nav-item"> 
                         <a href="#" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="home" data-bs-original-title="home">  
-                            <img src="../../public/assets/images/icon/house.svg" alt="home" width="24" height="24" class="bi pe-none">
+                            <img src="../public/assets/images/icon/house.svg" alt="home" width="24" height="24" class="bi pe-none">
                         </a> 
                     </li> 
                     <li class="nav-item"> 
                         <a href="#" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="workout" data-bs-original-title="workout">  
-                            <img src="../../public/assets/images/icon/gym-dumbell.svg" alt="workout" width="24" height="24" class="bi pe-none">
+                            <img src="../public/assets/images/icon/gym-dumbell.svg" alt="workout" width="24" height="24" class="bi pe-none">
                         </a> 
                     </li> 
                     <li class="nav-item"> 
                         <a href="#" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="nutrition" data-bs-original-title="nutrition">  
-                            <img src="../../public/assets/images/icon/fork-knife.svg" alt="nutrition" width="24" height="24" class="bi pe-none">
+                            <img src="../public/assets/images/icon/fork-knife.svg" alt="nutrition" width="24" height="24" class="bi pe-none">
                         </a> 
                     </li> 
                     <li class="nav-item"> 
                         <a href="#" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="analytics" data-bs-original-title="analytics">  
-                            <img src="../../public/assets/images/icon/graph-up.svg" alt="analytics" width="24" height="24" class="bi pe-none">
+                            <img src="../public/assets/images/icon/graph-up.svg" alt="analytics" width="24" height="24" class="bi pe-none">
                         </a> 
                     </li> 
                 </ul> 
@@ -64,15 +64,15 @@
                         <li class="dropdown-header">
                             <div>
                                 <div class="fw-bold"><?php echo $_SESSION['nome']?></div>
-                                <small class="text-muted">Utente</small>
+                                <small class="text-muted">Personal Trainer</small>
                             </div>
                         </li>
                         <li><hr class="dropdown-divider"></li> 
-                        <li><a class="dropdown-item" href="#"><img src="../../public/assets/images/icon/gear.svg"><i class="bi bi-list-task me-2"></i> Impostazioni</a></li>
-                        <li><a class="dropdown-item" href="#"><img src="../../public/assets/images/icon/headset.svg"><i class="bi bi-list-task me-2"></i> Supporto</a></li>
-                        <li><a class="dropdown-item" href="#"><img src="../../public/assets/images/icon/person.svg"><i class="bi bi-person me-2"></i> Profilo</a></li> 
+                        <li><a class="dropdown-item" href="#"><img src="../public/assets/images/icon/gear.svg"><i class="bi bi-list-task me-2"></i> Impostazioni</a></li>
+                        <li><a class="dropdown-item" href="#"><img src="../public/assets/images/icon/headset.svg"><i class="bi bi-list-task me-2"></i> Supporto</a></li>
+                        <li><a class="dropdown-item" href="#"><img src="../public/assets/images/icon/person.svg"><i class="bi bi-person me-2"></i> Profilo</a></li> 
                         <li><hr class="dropdown-divider"></li> 
-                        <li><a class="dropdown-item text-danger" href="../app/Services/logout.php"><img src="../../public/assets/images/icon/box-arrow-right.svg"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li> 
+                        <li><a class="dropdown-item text-danger" href="../app/Services/logout.php"><img src="../public/assets/images/icon/box-arrow-right.svg"><i class="bi bi-box-arrow-right me-2"></i> Log Out</a></li> 
                     </ul> 
                 </div> 
             </nav>

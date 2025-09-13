@@ -1,10 +1,10 @@
 <?php
-    namespace App\Models\User;
+    namespace App\Models\Users;
     
-    class PersonalTrainer extends Utente{
+    class PersonalTrainer extends User{
 
-        function __construct($nome, $cognome, $mail, $password, $ruolo, $id = null, $personal_trainer = null){
-            parent::__construct($nome, $cognome, $mail, $password, $ruolo, $id, $personal_trainer);
+        public function __construct(string $nome, string $cognome, string $mail, string $password, int $ruolo, ?int $id = null) {
+            parent::__construct($nome, $cognome, $mail, $password, $ruolo, $id);
         }
 
         function getClientiDB($id_personal_trainer){
