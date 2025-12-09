@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
+class User extends Authenticatable
+{
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'role_id',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+
+    public static function insertUserIntoDB($role_id, $name, $surname, $email, $password)
+    {
+        DB::insert('INSERT INTO users (role_id, name, surname, email, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)', [
+            $role_id,
+            $name,
+            $surname,
+            $email,
+            Hash::make($password),
+            now(),
+            now()
+        ]);
+    }   
+
+    public static function getUserByEmailAndPassword($email, $password)
+    {
+        $user = DB::select('SELECT * FROM users WHERE email = ? LIMIT 1', [$email]);
+        
+        if ($user && Hash::check($password, $user[0]->password)) {
+            //creazione di un'istanza di User e popolamento con l'oggetto stdClass ottenuto dalla query
+            return (new User())->setRawAttributes((array) $user[0]);
+        }
+        return null;
+    }
+}
