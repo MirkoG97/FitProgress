@@ -8,7 +8,13 @@
             <li class="dropdown-header">
                 <div>
                     <div class="fw-bold">{{Auth::user()->name}} {{Auth::user()->surname}}</div>
-                    <small class="text-muted">Utente</small>
+                    @if(Auth::user()->role_id == 1)
+                        <small class="text-muted">Utente</small>
+                    @elseif(Auth::user()->role_id == 2)
+                        <small class="text-muted">Trainer</small>
+                    @else
+                        <small class="text-muted">Admin</small>
+                    @endif
                 </div>
             </li>
             <li><hr class="dropdown-divider"></li> 

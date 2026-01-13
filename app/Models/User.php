@@ -72,4 +72,13 @@ class User extends Authenticatable
         }
         return null;
     }
+
+    public static function getAllUsers()
+    {
+        $users = DB::select('SELECT id,name,surname,role_id FROM users WHERE role_id = 1');
+        if($users){
+            return $users;
+        }
+        return null;
+    }
 }

@@ -38,3 +38,6 @@ Route::get('/workouts/{workout_id}/exercises', [ExerciseController::class, 'show
 
 // Rotta per visualizzare le sessioni di un esercizio specifico in un allenamento specifico
 Route::get('/workouts/{workout_id}/exercises/{exercise_id}/sessions', [WorkoutSessionController::class, 'showSessionsByExerciseIdAndWorkoutId'])->name('sessionsByExerciseAndWorkout');
+
+// Rotta per visualizzare gli utenti (solo per trainer e admin)
+Route::get('/users', [UserController::class, 'showAllUsers'])->name('allUsers')->middleware('auth');

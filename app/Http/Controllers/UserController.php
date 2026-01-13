@@ -79,4 +79,10 @@ class UserController extends Controller
 
         return redirect('/login')->with('success', 'Logout effettuato con successo!');
     }
+
+    public function showAllUsers()
+    {
+        $users = User::getAllUsers();
+        return view('users_view', ['users' => $users, 'pageTitle' => 'All Users']);
+    }
 }

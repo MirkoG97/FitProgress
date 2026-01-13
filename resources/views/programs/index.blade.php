@@ -3,8 +3,7 @@
 @section('content')
 <div class="container">
     <h2>I miei programmi</h2>
-
-    @if(count($programs) > 0)
+    @if(isset($programs) && count($programs) > 0)
         <ul class="list-group">
             @foreach($programs as $program)
                 <li class="list-group-item">
