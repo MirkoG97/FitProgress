@@ -28,7 +28,7 @@ Route::post('/login', [UserController::class, 'login'])->name('loginUser');
 Route::post('/logout', [UserController::class, 'logout'])->name('logoutUser'); 
 
 // Rotta per visualizzare i programmi dell'utente autenticato
-Route::get('/programs', [ProgramController::class, 'showProgramsByUserId'])->name('programsByUser');
+Route::get('/programs/{userId?}', [ProgramController::class, 'showProgramsByUserId'])->name('programsByUser');
 
 // Rotta per visualizzare gli allenamenti di un programma specifico
 Route::get('/programs/{program_id}/workouts', [WorkoutController::class, 'showWorkoutProgramsByProgramId'])->name('workoutsByProgram');

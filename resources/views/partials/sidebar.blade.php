@@ -11,7 +11,7 @@
             </a> 
         </li> 
         <li class="nav-item"> 
-            <a href="{{ route('programsByUser') }}" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="workout" data-bs-original-title="workout">  
+            <a href="{{ route('programsByUser', ['userId' => Auth::id()]) }}" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="workout" data-bs-original-title="workout">  
                 <img src="{{ asset('assets/icon/gym-dumbell.svg') }}" alt="workout" width="24" height="24" class="bi pe-none">
             </a> 
         </li> 
