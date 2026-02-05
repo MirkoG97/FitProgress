@@ -27,7 +27,7 @@
         </li> 
         @if(Auth::user()->role_id == 2 || Auth::user()->role_id == 3)
         <li class="nav-item"> 
-            <a href="{{ route('allUsers') }}" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="users" data-bs-original-title="users">  
+            <a href="{{ route('usersByTrainer') }}" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="users" data-bs-original-title="users">  
                 <img src="{{ asset('assets/icon/person.svg') }}" alt="trainer" width="24" height="24" class="bi pe-none">
             </a> 
         </li> 

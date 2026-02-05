@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $workout->name}}</h5>
                             <p class="card-text">{{ $workout->description}}</p>
-                            <a href="{{ route('exercisesByWorkout', $workout->workout_id, $program_id) }}" class="btn btn-primary">Apri il workout</a>
+                            <a href="{{ route('exercisesByWorkout', ['workout_id' => $workout->workout_id, 'program_id' => $program_id, 'user_id' => $user_id]) }}" class="btn btn-primary">Apri il workout</a>
                         </div>
                     </div>
                 </li>
@@ -21,6 +21,6 @@
     @else
         <p>Non hai ancora un workout associato a questo programma. Creane uno!</p>
     @endif
-    <a href="{{ route('programsByUser') }}" class="btn btn-primary mt-3">Torna ai programmi</a>
+    <a href="{{ route('programsByUser', ['user_id' => $user_id]) }}" class="btn btn-primary mt-3">Torna ai programmi</a>
 </div>
 @endsection

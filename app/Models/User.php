@@ -49,6 +49,20 @@ class User extends Authenticatable
         ];
     }
 
+    public function trainers()
+    {
+        return $this->belongsToMany(User::class, 'user_trainer_assignment', 'user_id', 'personal_trainer_id')
+                    ->using(UserTrainerAssignment::class)
+                    ->withTimestamps();
+    }
+
+    public function athletes()
+    {
+        return $this->belongsToMany(User::class, 'user_trainer_assignment', 'personal_trainer_id', 'user_id')
+                    ->using(UserTrainerAssignment::class)
+                    ->withTimestamps();
+    }
+
     public static function insertUserIntoDB($role_id, $name, $surname, $email, $password)
     {
         DB::insert('INSERT INTO users (role_id, name, surname, email, password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)', [
@@ -81,4 +95,28 @@ class User extends Authenticatable
         }
         return null;
     }
+
+    public static function getUsersByTrainerId($trainer_id)
+    {
+        $users = DB::select('SELECT users.id, users.name, users.surname
+                             FROM users
+                             JOIN user_trainer_assignment ON users.id = user_trainer_assignment.user_id
+                             WHERE user_trainer_assignment.personal_trainer_id = ?', [$trainer_id]);
+        if($users){
+            return $users;
+        }
+        return null;
+    }
+
+    public static function getTrainerByUserId($user_id)
+    {
+        $trainer = DB::select('SELECT users.id, users.name, users.surname
+                             FROM users
+                             JOIN user_trainer_assignment ON users.id = user_trainer_assignment.personal_trainer_id
+                             WHERE user_trainer_assignment.user_id = ? LIMIT 1', [$user_id]);
+        if($trainer){
+            return $trainer[0];
+        }
+        return null;
+    }   
 }

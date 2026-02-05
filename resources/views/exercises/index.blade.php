@@ -16,7 +16,7 @@
                             <p class="card-text">MUSCOLO SECONDARIO:{{ $exercise->secondary_target_muscle }}</p>
                             <p class="card-text">NOTE: {{ $exercise->notes }}</p>
                             <p class="card-text">DESCRIZIONE: {{ $exercise->description }}</p>
-                            <a href="{{ route('sessionsByExerciseAndWorkout', ['workout_id' => request()->route('workout_id'),'exercise_id' => $exercise->id]) }}" class="btn btn-primary">
+                            <a href="{{ route('sessionsByExerciseAndWorkout', ['workout_id' => request()->route('workout_id'),'exercise_id' => $exercise->id, 'user_id' => $user_id]) }}" class="btn btn-primary">
                                 Visualizza sessioni precedenti
                             </a>
                             <a href=" " class="btn btn-primary">tasto </a>
@@ -28,6 +28,6 @@
     @else
         <p>Non hai ancora un workout associato a questo programma. Creane uno!</p>
     @endif
-    <a href="{{ route('workoutsByProgram', ['program_id' => $program_id]) }}" class="btn btn-primary mt-3">Torna ai Workout</a>
+    <a href="{{ route('workoutsByProgram', ['program_id' => $program_id, 'user_id' => $user_id]) }}" class="btn btn-primary mt-3">Torna ai Workout</a>
 </div>
 @endsection

@@ -21,6 +21,6 @@
     @else
         <p>Non hai ancora un workout associato a questo programma. Creane uno!</p>
     @endif
-    <a href="{{ route('exercisesByWorkout', ['workout_id' => $workout_id]) }}" class="btn btn-primary mt-3">Torna agli esercizi</a>
+    <a href="{{ route('exercisesByWorkout', ['workout_id' => $workout_id, 'user_id' => $user_id]) }}" class="btn btn-primary mt-3">Torna agli esercizi</a>
 </div>
 @endsection

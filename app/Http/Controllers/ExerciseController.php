@@ -8,10 +8,14 @@ use App\Models\Exercise;
 
 class ExerciseController extends Controller
 {
-    public function showExercisesByWorkoutId($workout_id){
+    public function showExercisesByWorkoutId(Request $request, $workout_id){
         $exercises = Exercise::getExercisesByWorkoutId($workout_id);
         $program_id = Exercise::getProgrmIdByWorkoutId($workout_id);
-        echo $program_id;
-        return view('exercises.index', ['exercises' => $exercises, 'workout_id' => $workout_id, 'program_id' => $program_id]);
+        if($request->has('user_id')){
+            $user_id = $request->query('user_id');
+        }else{  
+            $user_id = Auth()->id();
+        }
+        return view('exercises.index', ['exercises' => $exercises, 'workout_id' => $workout_id, 'program_id' => $program_id, 'user_id' => $user_id]);
     }
 }

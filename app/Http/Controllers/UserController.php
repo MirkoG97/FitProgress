@@ -85,4 +85,16 @@ class UserController extends Controller
         $users = User::getAllUsers();
         return view('users_view', ['users' => $users, 'pageTitle' => 'All Users']);
     }
+
+    /*public function showUsersByTrainerId($trainer_id)
+    {
+        $users = User::getUsersByTrainerId($trainer_id);
+        return view('users_view', ['users' => $users, 'pageTitle' => 'My Athletes']);
+    }*/
+
+    public function showAthletesByTrainer(){
+        $trainer_id = Auth()->id();
+        $users = User::getUsersByTrainerId($trainer_id);
+        return view('users_view', ['users' => $users, 'pageTitle' => 'My Athletes']);
+    }
 }
